@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" xmlns:form="http://www.w3.org/1999/xhtml">
+ <html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="home.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
+    <title>ALKOMACIK</title>
+</head>
+<body>
+<form action="#" th:action="@{/}" th:object="${danePodstawowe}" method="post">
+<div class="indroduction">
+    <h2> 1# Podstawowe dane o mnie</h2>
+    <span>
+    <div class="wrapper">
+        <label>WAGA w [kg] </label>
+<input type="text"  th:field="*{weight}"/>
+    </div>
+    <div claass="gender">
+        <br>
+        <label >Płeć:</label>
+       <select for="gender" th:field="*{gender}">
+           <option value=" KOBIETA">KOBIETA</option>
+           <option value=" MĘŻCZYZNA">MĘŻCZYZNA</option>
+       </select>
+        <br>
+    </div>
+</div>
+
+    <div class="conclusion" >
+          <h2> 2# Dawka alkoholu</h2>
+    <span>
+         <div class="alkohol">
+        <br>
+      <input type="radio" value="wódka" id="wódka" th:field="*{alkohole}"/>
+        <label for="wódka">wódka</label>
+        <input type="radio" value="piwo" id="piwo" checked name="piwo" th:field="*{alkohole}"/>
+        <label for="piwo">piwo</label>
+         <input type="radio" value="wino" id="wino" checked name="wino" th:field="*{alkohole}"/>
+        <label for="wino">wino</label>
+        <br>
+    </div>
+    </span>
+    <div class="liczenie">
+            <table class="bary">
+                <thead>
+                <tr>
+                    <th>Porcja alkoholu [ml]</th>
+                    <th>Ilość alkoholu</th>
+                </tr>
+            </thead>
+                <tbody>
+                <div class="Alkohole">
+                    <tr>
+                     <td><select th:field="*{volume}">
+    			<option th:each="porcja: ${servingList}"
+                        th:value="${porcja}"
+                        th:text="${porcja}"></option>
+                        </select></td>
+                      <td><input type="text"  th:field="*{quanity}"/></td>
+                    </tr>
+            </table>
+        </tbody>
+        <p> <button type="submit" value="Alkomat">Oblicz</button></p>
+    </div>
+    </div>
+    </form>
+</body>
+</html>
+</html>

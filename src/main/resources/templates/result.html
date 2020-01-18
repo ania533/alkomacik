@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html xmlns:th="http://www.thymeleaf.org"  lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="result.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
+    <title>ALKOMACIK</title>
+</head>
+<body>
+<p>
+<h1>WYNIK POMIARU </h1>
+<div class="pomiar">
+    <p th:text="'Waga: ' +${danePodstawowe.weight} + ' kg'"/>
+    <p th:text="'Płeć: ' +${danePodstawowe.gender}"/>
+    <p th:text="'Spożyty alkohol: ' +${danePodstawowe.alkohole}"/>
+    <p th:text="'Porcja spożytego alkoholu: ' +${danePodstawowe.volume} + ' ml'"/>
+    <p th:text="'Ilość porcji spożyetgo alkoholu: ' +${danePodstawowe.quanity}"/>
+    <p th:text="'Obliczone promile: ' +${danePodstawowe.alkomat} + ' ‰' "/>
+</div>
+<div class="guzik">
+    <form action="#" th:action="@{/}" th:object="${dane}" method="post">
+        <input type="button" value="Wstecz" onclick="history.go(-1);">
+    </form>
+</div>
+</body>
+</html>
+</html>

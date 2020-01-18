@@ -1,0 +1,36 @@
+input[type=button] {
+    width: 200px;
+    background-color: darkgreen;
+    font-size: 20px;
+    color: #efefef;
+    border:none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    letter-spacing: 5px;
+    margin-left: 30px;
+    margin-top: 50px;
+}
+input[type=button].hover {
+    background-color: #37b93d;
+}
+
+body{
+    background-color: #FFFFFF;
+    color: black;
+    font-size: 30px;
+    font-family: 'Calibri', sans-serif;
+    text-align: center;
+}
+.pomiar{
+    text-align: center;
+    float: inside;
+    width: 300px;
+    border: #666666 dotted;
+    padding: 20px;
+    border-radius: 5px;
+    font-size: 20px;
+    align-content: center;
+    line-height: 2.0;
+    margin: 0 auto;
+}
